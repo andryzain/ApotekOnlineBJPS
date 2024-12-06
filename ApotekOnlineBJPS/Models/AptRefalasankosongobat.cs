@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptRefalasankosongobat
     {
@@ -11,6 +12,8 @@ namespace ApotekOnlineBJPS.Models
             AptDatkekosonganobats = new HashSet<AptDatkekosonganobat>();
         }
 
+        [Key]
+        public Guid AptRefalasankosongobatId { get; set; }
         public string Kdalasankosong { get; set; } = null!;
         public string? Nmalasankosong { get; set; }
         public bool? Flagaktif { get; set; }

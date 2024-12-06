@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptDatsjp
     {
@@ -10,6 +11,8 @@ namespace ApotekOnlineBJPS.Models
             AptDatreseps = new HashSet<AptDatresep>();
         }
 
+        [Key]
+        public Guid AptDatsjpId { get; set; }
         public string? Nofpk { get; set; }
         public string Nosjp { get; set; } = null!;
         public DateTime? Tglsjp { get; set; }

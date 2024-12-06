@@ -1,15 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptRefasalsepApproval
     {
+        [Key]
+        public Guid AptRefasalsepApprovalId { get; set; }
         public string Kdppk { get; set; } = null!;
         public string Ppkpelrsp { get; set; } = null!;
         public string Nosep { get; set; } = null!;
         public string? Jnspelsep { get; set; }
-        public DateOnly? Tglsep { get; set; }
+        public DateTime? Tglsep { get; set; }
         public string Nokapst { get; set; } = null!;
         public string? Nmpst { get; set; }
         public DateTime? Tglaju { get; set; }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptRefstatusverresep
     {
@@ -10,6 +11,8 @@ namespace ApotekOnlineBJPS.Models
             AptDatbapengajuanklaimdetails = new HashSet<AptDatbapengajuanklaimdetail>();
         }
 
+        [Key]
+        public Guid AptRefstatusverresepId { get; set; }
         public short Statusver { get; set; }
         public string? Keterangan { get; set; }
         public bool? Flagaktif { get; set; }

@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptDatbafiltrasi
     {
+        [Key]
+        public Guid AptDatbafiltrasiId { get; set; }
         public string Nopbk { get; set; } = null!;
         public string Idfiltrasi { get; set; } = null!;
         public DateTime Tglfiltrasi { get; set; }
@@ -14,6 +17,6 @@ namespace ApotekOnlineBJPS.Models
         public string? Luser { get; set; }
         public DateTime? Ldate { get; set; }
 
-        public virtual AptRefjnsfiltrasi IdfiltrasiNavigation { get; set; } = null!;
+        //public virtual AptRefjnsfiltrasi IdfiltrasiNavigation { get; set; } = null!;
     }
 }

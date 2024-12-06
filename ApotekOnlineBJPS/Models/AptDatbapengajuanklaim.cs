@@ -1,23 +1,27 @@
-﻿using System;
+﻿using ApotikOnlineBJPS.Models;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptDatbapengajuanklaim
     {
         public AptDatbapengajuanklaim()
         {
-            AptDatbaberkas = new HashSet<AptDatbaberka>();
+            AptDatbaberkas = new HashSet<AptDatbaberkas>();
             AptDatbapengajuanklaimdetails = new HashSet<AptDatbapengajuanklaimdetail>();
             AptDatbapengajuanklaimjenisobats = new HashSet<AptDatbapengajuanklaimjenisobat>();
         }
 
+        [Key]
+        public Guid AptDatbapengajuanklaimID { get; set; }
         public string Nopbk { get; set; } = null!;
         public DateTime Tglpb { get; set; }
         public string Kdkc { get; set; } = null!;
         public string Kdppk { get; set; } = null!;
         public string Kdtkp { get; set; } = null!;
-        public DateOnly? Tgllayanan { get; set; }
+        public DateTime? Tgllayanan { get; set; }
         public short? Bulanyan { get; set; }
         public short? Tahunyan { get; set; }
         public decimal? Totksberkas { get; set; }
@@ -38,7 +42,7 @@ namespace ApotekOnlineBJPS.Models
         public short Flagumk { get; set; }
 
         public virtual AptRefstatuspb? StatuspbNavigation { get; set; }
-        public virtual ICollection<AptDatbaberka> AptDatbaberkas { get; set; }
+        public virtual ICollection<AptDatbaberkas> AptDatbaberkas { get; set; }
         public virtual ICollection<AptDatbapengajuanklaimdetail> AptDatbapengajuanklaimdetails { get; set; }
         public virtual ICollection<AptDatbapengajuanklaimjenisobat> AptDatbapengajuanklaimjenisobats { get; set; }
     }

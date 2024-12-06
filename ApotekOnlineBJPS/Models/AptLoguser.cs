@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptLoguser
     {
+        [Key]
+        public Guid AptLoguserId { get; set; }
         public long Userid { get; set; }
         public string? Username { get; set; }
         public string? Clientip { get; set; }

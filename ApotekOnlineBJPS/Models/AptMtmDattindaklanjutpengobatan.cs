@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptMtmDattindaklanjutpengobatan
     {
+        [Key]
+        public Guid AptMtmDattindaklanjutpengobatanId { get; set; }
         public string Nomtm { get; set; } = null!;
         public int Idtargetpengobatan { get; set; }
         public int Idtindaklanjutpengobatan { get; set; }

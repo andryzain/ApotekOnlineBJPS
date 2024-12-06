@@ -1,5 +1,4 @@
-﻿using ApotekOnlineBJPS.Models;
-namespace ApotekOnlineBJPS.ViewModelss
+﻿namespace ApotekOnlineBJPS.ViewModelss
 {
     public partial class AptRefspesialistdokterViewModel
     {

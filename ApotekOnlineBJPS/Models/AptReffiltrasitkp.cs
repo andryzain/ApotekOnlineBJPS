@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptReffiltrasitkp
     {
+        [Key]
+        public Guid AptReffiltrasitkpId { get; set; }
         public string Idfiltrasi { get; set; } = null!;
         public string Kdtkp { get; set; } = null!;
         public bool? Flagaktif { get; set; }

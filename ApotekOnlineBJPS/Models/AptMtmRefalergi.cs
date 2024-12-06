@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptMtmRefalergi
     {
+        [Key]
+        public Guid AptMtmRefalergiId { get; set; }
         public string Idrefalergi { get; set; } = null!;
         public string Nmalergi { get; set; } = null!;
         public string? Fuser { get; set; }

@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
     public partial class AptMtmRefmasalah
     {
@@ -10,6 +11,8 @@ namespace ApotekOnlineBJPS.Models
             AptMtmDatmasalahs = new HashSet<AptMtmDatmasalah>();
         }
 
+        [Key]
+        public Guid AptMtmRefmasalahId { get; set; }
         public string Idgroupmasalah { get; set; } = null!;
         public string Idmasalah { get; set; } = null!;
         public string Nmmasalah { get; set; } = null!;

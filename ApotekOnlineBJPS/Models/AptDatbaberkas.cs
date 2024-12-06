@@ -1,18 +1,23 @@
-﻿using System;
+﻿using ApotikOnlineBJPS.Models;
+using MessagePack;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
-namespace ApotekOnlineBJPS.Models
+namespace ApotikOnlineBJPS.Models
 {
-    public partial class AptDatbaberka
+    public partial class AptDatbaberkas
     {
+        [Key]
+        public Guid AptDatbaberkasId { get; set; }
         public string Nopbk { get; set; } = null!;
         public short Statuspb { get; set; }
         public string Nosurat { get; set; } = null!;
         public DateTime Tglentri { get; set; }
-        public DateOnly? Tglba { get; set; }
+        public DateTime? Tglba { get; set; }
         public string? Noreff { get; set; }
-        public DateOnly? Tglselesai { get; set; }
-        public DateOnly? Tgljthtempo { get; set; }
+        public DateTime? Tglselesai { get; set; }
+        public DateTime? Tgljthtempo { get; set; }
         public string? Nmpetugas { get; set; }
         public string? Nippetugas { get; set; }
         public string? Nmdirektur { get; set; }
@@ -24,7 +29,7 @@ namespace ApotekOnlineBJPS.Models
         public DateTime? Ldate { get; set; }
         public bool Isbaotomatis { get; set; }
 
-        public virtual AptDatbapengajuanklaim NopbkNavigation { get; set; } = null!;
-        public virtual AptRefstatuspb StatuspbNavigation { get; set; } = null!;
+        //public virtual AptDatbapengajuanklaim NopbkNavigation { get; set; } = null!;
+        //public virtual AptRefstatuspb StatuspbNavigation { get; set; } = null!;
     }
 }

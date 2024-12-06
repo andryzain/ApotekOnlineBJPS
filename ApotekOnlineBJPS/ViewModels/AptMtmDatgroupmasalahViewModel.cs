@@ -1,5 +1,4 @@
-﻿using ApotekOnlineBJPS.Models;
-namespace ApotekOnlineBJPS.ViewModels
+﻿namespace ApotekOnlineBJPS.ViewModels
 {
     public partial class AptMtmDatgroupmasalahViewModel
     {

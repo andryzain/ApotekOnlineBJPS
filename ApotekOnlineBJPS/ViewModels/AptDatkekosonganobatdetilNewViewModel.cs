@@ -1,4 +1,4 @@
-﻿using ApotekOnlineBJPS.Models;
+﻿
 namespace ApotekOnlineBJPS.ViewModels
 {
     public partial class AptDatkekosonganobatdetilNewViewModel
