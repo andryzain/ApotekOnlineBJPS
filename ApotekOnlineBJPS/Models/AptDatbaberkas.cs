@@ -1,10 +1,6 @@
-﻿using ApotikOnlineBJPS.Models;
-using MessagePack;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace ApotikOnlineBJPS.Models
+namespace ApotekOnlineBJPS.Models
 {
     public partial class AptDatbaberkas
     {

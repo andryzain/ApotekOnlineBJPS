@@ -1,12 +1,13 @@
-﻿using ApotikOnlineBJPS.Models;
-using ApotikOnlineBJPS.Repositories;
+﻿using ApotekOnlineBJPS.Models;
+using ApotekOnlineBJPS.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Linq;
 
-namespace ApotikOnlineBJPS.Controllers
+namespace ApotekOnlineBJPS.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -107,14 +108,34 @@ namespace ApotikOnlineBJPS.Controllers
 
         // Get Paginated AptDatbaberkas
         [HttpGet("paged")]
-        public IActionResult GetPagedAptDatbaberkas(int page = 1, int perPage = 2)
+        public IActionResult GetPagedAptDatbaberkas(int page = 1, int perPage = 2, string? search = null, string? orderBy = "CreateDateTime", string? sortDirection = "asc")
         {
             if (page <= 0 || perPage <= 0)
             {
                 return BadRequest(new { status = "error", message = "Page and perPage must be greater than 0." });
             }
 
-            var totalRows = _applicationDbContext.AptDatbaberkass.Count();
+            // Query dasar
+            var query = _applicationDbContext.AptDatbaberkass.AsQueryable();
+
+            // Filter berdasarkan search jika ada
+            if (!string.IsNullOrWhiteSpace(search))
+            {
+                query = query.Where(u => u.Nopbk.Contains(search) || u.Nosurat.Contains(search) || u.Nmpetugas.Contains(search)); // Sesuaikan properti dengan kebutuhan
+            }
+
+            // Tambahkan order by
+            if (!string.IsNullOrEmpty(orderBy))
+            {
+                query = sortDirection?.ToLower() == "desc"
+                    ? query.OrderByDescending(e => EF.Property<object>(e, orderBy))
+                    : query.OrderBy(e => EF.Property<object>(e, orderBy));
+            }
+
+            // Total Rows
+            var totalRows = query.Count();
+
+            // Total Pages
             var totalPages = (int)Math.Ceiling(totalRows / (double)perPage);
 
             var rows = _applicationDbContext.AptDatbaberkass

@@ -1,15 +1,20 @@
-﻿using ApotikOnlineBJPS.Models;
+﻿using ApotekOnlineBJPS.Models;
+using ApotekOnlineBJPS.Areas.MasterData.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using ApotekOnlineBJPS.Areas.Master.Models;
 
-namespace ApotikOnlineBJPS.Repositories
+namespace ApotekOnlineBJPS.Repositories
 {
-    public class ApplicationDbContext :DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
+
+        #region Apotek Online
         public DbSet<AptDatbaberkas> AptDatbaberkass { get; set; }
         public DbSet<AptDatbaberkasHist> AptDatbaberkasHists { get; set; }
         public DbSet<AptDatbafiltrasi> AptDatbafiltrasis { get; set; }
@@ -60,5 +65,19 @@ namespace ApotikOnlineBJPS.Repositories
         public DbSet<AptRefspesialistdokter> AptRefspesialistdokters { get; set; }
         public DbSet<AptRefstatuspb> AptRefstatuspbs { get; set; }
         public DbSet<AptRefstatusverresep> AptRefstatusverreseps { get; set; }
+
+        #endregion
+
+        #region Konfigurasi
+        public DbSet<DatLogin> DatLogins { get; set; }
+        public DbSet<UserActive> UserActives { get; set; }
+        public DbSet<DatSepPeserta> DatSepPesertas { get; set; }
+        public DbSet<DatDokter> DatDokters { get; set; }
+        public DbSet<DatStock> DatStocks { get; set; }
+        public DbSet<DatObat> DatObats { get; set; }
+        public DbSet<ResepPRB> ResepPRBs { get; set; }
+        public DbSet<DatPRBMTMPCare> DatPRBMTMPCares { get; set; }
+        public DbSet<DatResep> DatReseps { get; set; }
+        #endregion
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ApotikOnlineBJPS.Models
+namespace ApotekOnlineBJPS.Models
 {
     public partial class AptHistupdDatresep
     {

@@ -1,8 +1,9 @@
-﻿using System;
+﻿using ApotekOnlineBJPS.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace ApotikOnlineBJPS.Models
+namespace ApotekOnlineBJPS.Models
 {
     public partial class AptRefstatuspb
     {
