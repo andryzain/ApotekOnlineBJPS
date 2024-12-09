@@ -2,6 +2,7 @@
 {
     public partial class AptDatbaberkasViewModel
     {
+        public Guid AptDatbaberkasId { get; set; }
         public string Nopbk { get; set; } = null!;
         public short Statuspb { get; set; }
         public string Nosurat { get; set; } = null!;

@@ -15,7 +15,7 @@ namespace ApotekOnlineBJPS.Models
         }
 
         [Key]
-        public Guid AptDatbapengajuanklaimID { get; set; }
+        public Guid AptDatbapengajuanklaimId { get; set; }
         public string Nopbk { get; set; } = null!;
         public DateTime Tglpb { get; set; }
         public string Kdkc { get; set; } = null!;

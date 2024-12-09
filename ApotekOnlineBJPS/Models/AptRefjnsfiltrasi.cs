@@ -12,7 +12,7 @@ namespace ApotekOnlineBJPS.Models
         }
 
         [Key]
-        public Guid AptRefjnspelsjpId { get; set; }
+        public Guid AptRefjnsfiltrasiId { get; set; }
         public string Idfiltrasi { get; set; } = null!;
         public string? Keterangan { get; set; }
         public bool? Flagaktif { get; set; }

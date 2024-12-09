@@ -68,10 +68,10 @@ namespace ApotekOnlineBJPS.Areas.MasterData.Controllers
                 {
                     KodeUser = vm.NOPEG,
                     NamaUser = vm.Nama,
-                    DatUserName = vm.UserName,
-                    DatPassword = vm.Password,
-                    DatNama = vm.Nama,
-                    DatNoPegawai = vm.NOPEG,
+                    //DatUserName = vm.UserName,
+                    //DatPassword = vm.Password,
+                    //DatNama = vm.Nama,
+                    //DatNoPegawai = vm.NOPEG,
                     Email = vm.Email,
                     UserName = vm.Email,
                     IsActive = true
