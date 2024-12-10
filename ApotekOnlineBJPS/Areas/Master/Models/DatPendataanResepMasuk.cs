@@ -5,10 +5,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace ApotekOnlineBJPS.Areas.Master.Models
 {
     [Table("MasterPendataanResepMasuk", Schema = "dbo")]
-    public class DatResepMasuk : UserActivity
+    public class DatPendataanResepMasuk : UserActivity
     {
         [Key]
-        public Guid DatResepMasukId { get; set; } = Guid.NewGuid();
+        public Guid DatPendataanResepMasukId { get; set; } = Guid.NewGuid();
         public string NoSEP { get; set; } = ""; // Input Pencarian
         public string FaskesAsalResep { get; set; } = "";
         public string NoKartu { get; set; } = "";
