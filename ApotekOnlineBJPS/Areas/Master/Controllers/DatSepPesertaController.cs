@@ -1,4 +1,5 @@
 ﻿using ApotekOnlineBJPS.Areas.Master.Models;
+using ApotekOnlineBJPS.Areas.Master.ViewModels;
 using ApotekOnlineBJPS.Areas.MasterData.ViewModels;
 using ApotekOnlineBJPS.Models;
 using ApotekOnlineBJPS.Repositories;
