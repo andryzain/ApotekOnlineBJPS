@@ -4,6 +4,7 @@ using ApotekOnlineBJPS.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApotekOnlineBJPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241213075400_sepdanref")]
+    partial class sepdanref
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -896,9 +898,6 @@ namespace ApotekOnlineBJPS.Migrations
                     b.Property<int>("DINSOS")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("DatSepId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("DeleteBy")
                         .HasColumnType("uniqueidentifier");
 
@@ -1123,8 +1122,6 @@ namespace ApotekOnlineBJPS.Migrations
                         .HasColumnType("datetimeoffset");
 
                     b.HasKey("DATSEPPESERTAID");
-
-                    b.HasIndex("DatSepId");
 
                     b.ToTable("MasterDatSepPeserta", "dbo");
                 });
@@ -4630,17 +4627,6 @@ namespace ApotekOnlineBJPS.Migrations
                         .HasForeignKey("ResepMasukId");
 
                     b.Navigation("ResepMasuk");
-                });
-
-            modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.DatSepPeserta", b =>
-                {
-                    b.HasOne("ApotekOnlineBJPS.Areas.Master.Models.DatSep", "DatSep")
-                        .WithMany()
-                        .HasForeignKey("DatSepId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DatSep");
                 });
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptDatbaberkas", b =>
