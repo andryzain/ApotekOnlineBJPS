@@ -12,8 +12,13 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApotekOnlineBJPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
+<<<<<<<< HEAD:ApotekOnlineBJPS/Migrations/20241210130508_PendataanResepMasuk.Designer.cs
     [Migration("20241210130508_PendataanResepMasuk")]
     partial class PendataanResepMasuk
+========
+    [Migration("20241209053800_data_Dat")]
+    partial class data_Dat
+>>>>>>>> 545c67a2096966f23d6f0e8d7f9941b8f10ce7b8:ApotekOnlineBJPS/Migrations/20241209053800_data_Dat.Designer.cs
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1245,7 +1250,7 @@ namespace ApotekOnlineBJPS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AptDatbapengajuanklaimId")
+                    b.Property<Guid?>("AptDatbapengajuanklaimID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("AptRefstatuspbId")
@@ -1309,7 +1314,7 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("AptDatbaberkasId");
 
-                    b.HasIndex("AptDatbapengajuanklaimId");
+                    b.HasIndex("AptDatbapengajuanklaimID");
 
                     b.HasIndex("AptRefstatuspbId");
 
@@ -1349,7 +1354,7 @@ namespace ApotekOnlineBJPS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AptRefjnsfiltrasiId")
+                    b.Property<Guid?>("AptRefjnsfiltrasiAptRefjnspelsjpId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("Fdate")
@@ -1380,7 +1385,7 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("AptDatbafiltrasiId");
 
-                    b.HasIndex("AptRefjnsfiltrasiId");
+                    b.HasIndex("AptRefjnsfiltrasiAptRefjnspelsjpId");
 
                     b.ToTable("AptDatbafiltrasis");
                 });
@@ -1414,7 +1419,7 @@ namespace ApotekOnlineBJPS.Migrations
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", b =>
                 {
-                    b.Property<Guid>("AptDatbapengajuanklaimId")
+                    b.Property<Guid>("AptDatbapengajuanklaimID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -1499,7 +1504,7 @@ namespace ApotekOnlineBJPS.Migrations
                     b.Property<decimal?>("Totksberkas")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("AptDatbapengajuanklaimId");
+                    b.HasKey("AptDatbapengajuanklaimID");
 
                     b.HasIndex("StatuspbNavigationAptRefstatuspbId");
 
@@ -1550,7 +1555,7 @@ namespace ApotekOnlineBJPS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimId")
+                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Noresep")
@@ -1581,7 +1586,7 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("AptDatbapengajuanklaimdetailId");
 
-                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimId");
+                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimID");
 
                     b.HasIndex("StatusverNavigationAptRefstatusverresepId");
 
@@ -1626,12 +1631,12 @@ namespace ApotekOnlineBJPS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimId")
+                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimID")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("AptDatbapengajuanklaimjenisobatId");
 
-                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimId");
+                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimID");
 
                     b.ToTable("AptDatbapengajuanklaimjenisobats");
                 });
@@ -3976,7 +3981,7 @@ namespace ApotekOnlineBJPS.Migrations
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptRefjnsfiltrasi", b =>
                 {
-                    b.Property<Guid>("AptRefjnsfiltrasiId")
+                    b.Property<Guid>("AptRefjnspelsjpId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -4002,7 +4007,7 @@ namespace ApotekOnlineBJPS.Migrations
                     b.Property<string>("Luser")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AptRefjnsfiltrasiId");
+                    b.HasKey("AptRefjnspelsjpId");
 
                     b.ToTable("AptRefjnsfiltrasis");
                 });
@@ -4311,7 +4316,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", null)
                         .WithMany("AptDatbaberkas")
-                        .HasForeignKey("AptDatbapengajuanklaimId");
+                        .HasForeignKey("AptDatbapengajuanklaimID");
 
                     b.HasOne("ApotekOnlineBJPS.Models.AptRefstatuspb", null)
                         .WithMany("AptDatbaberkas")
@@ -4322,7 +4327,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptRefjnsfiltrasi", null)
                         .WithMany("AptDatbafiltrasis")
-                        .HasForeignKey("AptRefjnsfiltrasiId");
+                        .HasForeignKey("AptRefjnsfiltrasiAptRefjnspelsjpId");
                 });
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", b =>
@@ -4338,7 +4343,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", "NopbkNavigation")
                         .WithMany("AptDatbapengajuanklaimdetails")
-                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimId")
+                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -4355,7 +4360,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", "NopbkNavigation")
                         .WithMany("AptDatbapengajuanklaimjenisobats")
-                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimId")
+                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
