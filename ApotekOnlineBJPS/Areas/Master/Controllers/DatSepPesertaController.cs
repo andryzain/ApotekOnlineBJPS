@@ -1,4 +1,5 @@
 ﻿using ApotekOnlineBJPS.Areas.Master.Models;
+using ApotekOnlineBJPS.Areas.Master.ViewModels;
 using ApotekOnlineBJPS.Areas.MasterData.ViewModels;
 using ApotekOnlineBJPS.Models;
 using ApotekOnlineBJPS.Repositories;
@@ -6,13 +7,14 @@ using MessagePack;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApotekOnlineBJPS.Areas.Master.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // Endpoint ini memerlukan token
-    [EnableCors("AllowSpecific")]
+    //[Authorize] // Endpoint ini memerlukan token
+    //[EnableCors("AllowSpecific")]
     public class DatSepPesertaController : Controller
     {
         private readonly ApplicationDbContext _applicationDbContext;
@@ -28,7 +30,9 @@ namespace ApotekOnlineBJPS.Areas.Master.Controllers
         [HttpGet]
         public IActionResult GetDatSepPesertas()
         {
-            var sepPeserta = _applicationDbContext.DatSepPesertas.ToList();
+            var sepPeserta = _applicationDbContext.DatSepPesertas
+    .Include(p => p.DatSep)
+    .ToList();
             if (sepPeserta == null || !sepPeserta.Any())
             {
                 return NotFound(new { message = "Belum ada data Sep Peserta. || 404 Not Found" });
@@ -215,6 +219,7 @@ namespace ApotekOnlineBJPS.Areas.Master.Controllers
                 sepPeserta.SKTM = vm.SKTM;
                 sepPeserta.TGLSTATUS = vm.TGLSTATUS;
                 sepPeserta.FIRSTAKTIF = vm.FIRSTAKTIF;
+                sepPeserta.DatSep = vm.DatSep;
 
                 // Tandai data sebagai telah diubah
                 _applicationDbContext.DatSepPesertas.Update(sepPeserta);

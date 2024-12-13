@@ -4,6 +4,7 @@ using ApotekOnlineBJPS.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ApotekOnlineBJPS.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+<<<<<<<< HEAD:ApotekOnlineBJPS/Migrations/20241210130508_PendataanResepMasuk.Designer.cs
+    [Migration("20241210130508_PendataanResepMasuk")]
+    partial class PendataanResepMasuk
+========
+    [Migration("20241209053800_data_Dat")]
+    partial class data_Dat
+>>>>>>>> 545c67a2096966f23d6f0e8d7f9941b8f10ce7b8:ApotekOnlineBJPS/Migrations/20241209053800_data_Dat.Designer.cs
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -711,287 +718,6 @@ namespace ApotekOnlineBJPS.Migrations
                     b.ToTable("MasterDatResep", "dbo");
                 });
 
-            modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.DatResepMasuk", b =>
-                {
-                    b.Property<Guid>("DatResepMasukId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("BadanUsaha")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("CreateBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTimeOffset>("CreateDateTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<Guid>("DeleteBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTimeOffset>("DeleteDateTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Diagnosa_awal")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FaskesAsalResep")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsCancel")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsDelete")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("Iterasi")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JnsKelamin")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JnsPst")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JnsResep")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NmPeserta")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NoKartu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NoResep")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NoSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pisat")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Pokter")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Poli")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TglLahir")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TglPelayanan")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TglPulang")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TglResep")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TglSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TkPlyn")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("UpdateBy")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<DateTimeOffset>("UpdateDateTime")
-                        .HasColumnType("datetimeoffset");
-
-                    b.HasKey("DatResepMasukId");
-
-                    b.ToTable("MasterPendataanResepMasuk", "dbo");
-                });
-
-            modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.DatSep", b =>
-                {
-                    b.Property<Guid>("DatSepId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("AKT")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CATKHSSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("DIAGPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("FDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FLAGPROSEDUR")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FLAGPRSKLAIMSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FLAGRUJUKAN")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FLAGSPRI")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Flag")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JKPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JNSPELSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDASU")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDDOKTER")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDJNSPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDKLSPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDKLSRWT")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDPENUNJANG")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("LDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MRPSTSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMDOKTER")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMPENUNJANG")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NOCETAK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NOKAPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NORJKAWALSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NOSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("OPSIKONSUL")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PISAPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("POLITUJSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PPKASALPST")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PPKPELSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("PPKRJKAWALSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("REFASALSEP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("SINKRON")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("TGLLHRPST")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TGLRJKAWALSEP")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TGLSEP")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("DatSepId");
-
-                    b.ToTable("MasterDatSep", "dbo");
-                });
-
             modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.DatSepPeserta", b =>
                 {
                     b.Property<Guid>("DATSEPPESERTAID")
@@ -1010,9 +736,6 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.Property<int>("DINSOS")
                         .HasColumnType("int");
-
-                    b.Property<Guid>("DatSepId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("DeleteBy")
                         .HasColumnType("uniqueidentifier");
@@ -1239,8 +962,6 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("DATSEPPESERTAID");
 
-                    b.HasIndex("DatSepId");
-
                     b.ToTable("MasterDatSepPeserta", "dbo");
                 });
 
@@ -1294,162 +1015,6 @@ namespace ApotekOnlineBJPS.Migrations
                     b.HasKey("DATSTOCKID");
 
                     b.ToTable("MasterDatStock", "dbo");
-                });
-
-            modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.RefProfilPPK", b =>
-                {
-                    b.Property<Guid>("RefProfilPPKId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<double>("BEDPPK")
-                        .HasColumnType("float");
-
-                    b.Property<string>("DATI2PPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FAXPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("FLAGAKTIF")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FLAGCOB")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("FLAGFPELKEFARMASIANTAMBAHAN")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("FLAGGRUP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FLAGPKS")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JNSKAPPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("JNSPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDDATI2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDKC")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDKEPEMILIKAN")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDKR")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDPOSPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KDPROP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KECPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KELPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KEPEMILIKANPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("KODPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMDATI2")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMDATI2PPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMJLNPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMKC")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMKEPEMILIKAN")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMKR")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMPROP")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("NMPROPPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("PROLANISF")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("RTPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RWPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("TELPPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("TGLHBSPKSPPK")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("TGLPKSPPK")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("TYPEPPK")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("VERTICALF")
-                        .HasColumnType("bit");
-
-                    b.HasKey("RefProfilPPKId");
-
-                    b.ToTable("RefProfilPPK", "dbo");
                 });
 
             modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.ResepPRB", b =>
@@ -1685,7 +1250,7 @@ namespace ApotekOnlineBJPS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AptDatbapengajuanklaimId")
+                    b.Property<Guid?>("AptDatbapengajuanklaimID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid?>("AptRefstatuspbId")
@@ -1749,7 +1314,7 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("AptDatbaberkasId");
 
-                    b.HasIndex("AptDatbapengajuanklaimId");
+                    b.HasIndex("AptDatbapengajuanklaimID");
 
                     b.HasIndex("AptRefstatuspbId");
 
@@ -1789,7 +1354,7 @@ namespace ApotekOnlineBJPS.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid?>("AptRefjnsfiltrasiId")
+                    b.Property<Guid?>("AptRefjnsfiltrasiAptRefjnspelsjpId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("Fdate")
@@ -1820,7 +1385,7 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("AptDatbafiltrasiId");
 
-                    b.HasIndex("AptRefjnsfiltrasiId");
+                    b.HasIndex("AptRefjnsfiltrasiAptRefjnspelsjpId");
 
                     b.ToTable("AptDatbafiltrasis");
                 });
@@ -1854,7 +1419,7 @@ namespace ApotekOnlineBJPS.Migrations
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", b =>
                 {
-                    b.Property<Guid>("AptDatbapengajuanklaimId")
+                    b.Property<Guid>("AptDatbapengajuanklaimID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -1939,7 +1504,7 @@ namespace ApotekOnlineBJPS.Migrations
                     b.Property<decimal?>("Totksberkas")
                         .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("AptDatbapengajuanklaimId");
+                    b.HasKey("AptDatbapengajuanklaimID");
 
                     b.HasIndex("StatuspbNavigationAptRefstatuspbId");
 
@@ -1990,7 +1555,7 @@ namespace ApotekOnlineBJPS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimId")
+                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Noresep")
@@ -2021,7 +1586,7 @@ namespace ApotekOnlineBJPS.Migrations
 
                     b.HasKey("AptDatbapengajuanklaimdetailId");
 
-                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimId");
+                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimID");
 
                     b.HasIndex("StatusverNavigationAptRefstatusverresepId");
 
@@ -2066,12 +1631,12 @@ namespace ApotekOnlineBJPS.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimId")
+                    b.Property<Guid>("NopbkNavigationAptDatbapengajuanklaimID")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("AptDatbapengajuanklaimjenisobatId");
 
-                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimId");
+                    b.HasIndex("NopbkNavigationAptDatbapengajuanklaimID");
 
                     b.ToTable("AptDatbapengajuanklaimjenisobats");
                 });
@@ -4416,7 +3981,7 @@ namespace ApotekOnlineBJPS.Migrations
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptRefjnsfiltrasi", b =>
                 {
-                    b.Property<Guid>("AptRefjnsfiltrasiId")
+                    b.Property<Guid>("AptRefjnspelsjpId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
@@ -4442,7 +4007,7 @@ namespace ApotekOnlineBJPS.Migrations
                     b.Property<string>("Luser")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AptRefjnsfiltrasiId");
+                    b.HasKey("AptRefjnspelsjpId");
 
                     b.ToTable("AptRefjnsfiltrasis");
                 });
@@ -4747,22 +4312,11 @@ namespace ApotekOnlineBJPS.Migrations
                     b.Navigation("ResepMasuk");
                 });
 
-            modelBuilder.Entity("ApotekOnlineBJPS.Areas.Master.Models.DatSepPeserta", b =>
-                {
-                    b.HasOne("ApotekOnlineBJPS.Areas.Master.Models.DatSep", "DatSep")
-                        .WithMany()
-                        .HasForeignKey("DatSepId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("DatSep");
-                });
-
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptDatbaberkas", b =>
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", null)
                         .WithMany("AptDatbaberkas")
-                        .HasForeignKey("AptDatbapengajuanklaimId");
+                        .HasForeignKey("AptDatbapengajuanklaimID");
 
                     b.HasOne("ApotekOnlineBJPS.Models.AptRefstatuspb", null)
                         .WithMany("AptDatbaberkas")
@@ -4773,7 +4327,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptRefjnsfiltrasi", null)
                         .WithMany("AptDatbafiltrasis")
-                        .HasForeignKey("AptRefjnsfiltrasiId");
+                        .HasForeignKey("AptRefjnsfiltrasiAptRefjnspelsjpId");
                 });
 
             modelBuilder.Entity("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", b =>
@@ -4789,7 +4343,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", "NopbkNavigation")
                         .WithMany("AptDatbapengajuanklaimdetails")
-                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimId")
+                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -4806,7 +4360,7 @@ namespace ApotekOnlineBJPS.Migrations
                 {
                     b.HasOne("ApotekOnlineBJPS.Models.AptDatbapengajuanklaim", "NopbkNavigation")
                         .WithMany("AptDatbapengajuanklaimjenisobats")
-                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimId")
+                        .HasForeignKey("NopbkNavigationAptDatbapengajuanklaimID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

@@ -79,6 +79,9 @@ namespace ApotekOnlineBJPS.Repositories
         public DbSet<DatPRBMTMPCare> DatPRBMTMPCares { get; set; }
         public DbSet<DatResep> DatReseps { get; set; }
         public DbSet<DatResepMasuk> DatResepMasuks { get; set; }
+        public DbSet<DatSep> DatSeps { get; set; }
+        public DbSet<RefProfilPPK> RefProfilPPKs { get; set; }
+        public DbSet<DatPendataanResepMasuk> DatPendataanResepMasuks { get; set; }
         #endregion
     }
 }

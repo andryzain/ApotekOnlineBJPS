@@ -1,6 +1,6 @@
 ﻿namespace ApotekOnlineBJPS.Areas.Master.ViewModels
 {
-    public class DatResepMasukViewModel
+    public class DatPendataanResepMasukViewModel
     {
         public string NoSEP { get; set; } = ""; // Input Pencarian
         //[Required(ErrorMessage = "Fullname is required !")]
