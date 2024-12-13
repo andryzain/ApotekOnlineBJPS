@@ -1,4 +1,4 @@
-﻿namespace ApotekOnlineBJPS.Areas.MasterData.ViewModels
+﻿namespace ApotekOnlineBJPS.Areas.Master.ViewModels
 {
     public class DatSepPesertaViewModel
     {
