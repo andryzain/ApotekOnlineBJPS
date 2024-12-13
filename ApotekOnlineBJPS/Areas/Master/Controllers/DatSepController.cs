@@ -14,8 +14,8 @@ namespace ApotekOnlineBJPS.Areas.Master.Controllers
 
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize] // Endpoint ini memerlukan token
-    [EnableCors("AllowSpecific")]
+    //[Authorize] // Endpoint ini memerlukan token
+    //[EnableCors("AllowSpecific")]
     public class DatSepController : Controller
     {
 

@@ -67,10 +67,15 @@ namespace ApotekOnlineBJPS.Areas.Master.Models
         public DateTimeOffset TGLSTATUS { get; set; }
         public DateTimeOffset FIRSTAKTIF { get; set; }
         public Guid DatSepId { get; set; }
+        public Guid RefProfilPPKId { get; set; }
 
 
         [ForeignKey("DatSepId")]
         public DatSep? DatSep { get; set; }
+
+
+        [ForeignKey("RefProfilPPKId")]
+        public RefProfilPPK? RefProfilPPK { get; set; }
     }
 
 }

@@ -2,6 +2,7 @@
 {
     public class DatPendataanResepMasukViewModel
     {
+        public Guid DatPendataanResepMasukId { get; set; }
         public string NoSEP { get; set; } = ""; // Input Pencarian
         //[Required(ErrorMessage = "Fullname is required !")]
         public string FaskesAsalResep { get; set; } = "";

@@ -59,5 +59,7 @@
         public string SKTM { get; set; }
         public DateTimeOffset TGLSTATUS { get; set; }
         public DateTimeOffset FIRSTAKTIF { get; set; }
+        public Guid DatSepId { get; set; }
+        public Guid RefProfilPPKId { get; set; }
     }
 }

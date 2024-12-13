@@ -8,7 +8,7 @@ namespace ApotekOnlineBJPS.Areas.Master.Models
     public class DatPendataanResepMasuk : UserActivity
     {
         [Key]
-        public Guid DatPendataanResepMasukId { get; set; } = Guid.NewGuid();
+        public Guid DatPendataanResepMasukId { get; set; }
         public string NoSEP { get; set; } = ""; // Input Pencarian
         public string FaskesAsalResep { get; set; } = "";
         public string NoKartu { get; set; } = "";

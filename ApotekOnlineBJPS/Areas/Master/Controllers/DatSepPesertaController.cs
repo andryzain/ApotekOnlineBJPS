@@ -58,6 +58,7 @@ namespace ApotekOnlineBJPS.Areas.Master.Controllers
                     DeleteDateTime = DateTimeOffset.MinValue,
                     DeleteBy = new Guid("00000000-0000-0000-0000-000000000000"),
                     DATSEPPESERTAID = Guid.NewGuid(),
+                    DatSepId = vm.DatSepId,
                     NOSEP = vm.NOSEP,
                     NOKAPST = vm.NOKAPST,
                     PSNOKALAMA = vm.PSNOKALAMA,
